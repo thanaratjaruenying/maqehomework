@@ -100,7 +100,11 @@ class PostsComponent extends Component {
     const {newPosts} = this.state;
     const postsList = this._getPosts();
     const pagers = newPosts.map((value, index) => {
-      return <Pager.Item key={`paper-${index}`} onClick={() => this.setState({page: index + 1})}>{index + 1}</Pager.Item>;
+      return (
+        <Pager.Item key={`paper-${index}`} onClick={() => this.setState({page: index + 1})}>
+          {index + 1}
+        </Pager.Item>
+      );
     });
 
     return (
